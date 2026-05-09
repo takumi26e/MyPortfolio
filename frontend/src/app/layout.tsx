@@ -14,6 +14,28 @@ export const metadata: Metadata = {
   description:
     "Sagara Takumi のポートフォリオサイト。Web技術の学習や趣味のイラスト・映像制作の記録。",
   keywords: ["portfolio", "web", "illust", "movie", "Sagara Takumi"],
+  openGraph: {
+    title: "Sagara Takumi — Portfolio",
+    description: "Sagara Takumi のポートフォリオサイト。",
+    url: "https://sagaratakumi.com",
+    siteName: "Sagara Takumi Portfolio",
+    images: [
+      {
+        url: "https://sagaratakumi.com/images/ogp.png", // ← 後でここに画像を配置します
+        width: 1200,
+        height: 630,
+        alt: "Sagara Takumi Portfolio",
+      },
+    ],
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sagara Takumi — Portfolio",
+    description: "Sagara Takumi のポートフォリオサイト。",
+    images: ["https://sagaratakumi.com/images/ogp.png"],
+  },
 };
 
 export default function RootLayout({
