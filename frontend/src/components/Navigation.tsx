@@ -115,14 +115,19 @@ export default function Navigation() {
       <ul className={styles.menuList}>
         {menuItems.map((item) => (
           <li key={item.href}>
-            <Link
-              href={item.href}
-              className={`${styles.menuItem} ${isActive(item.href) ? styles.active : ''}`}
-              id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}
-            >
-              <span className={styles.menuIcon}>{item.icon}</span>
-              <span className={styles.menuLabel}>{item.label}</span>
-            </Link>
+              <Link
+                href={item.href}
+                className={`${styles.menuItem} ${isActive(item.href) ? styles.active : ''}`}
+                id={`nav-${item.label.toLowerCase().replace(/\s/g, '-')}`}
+                onClick={(e) => {
+                  if (item.href === '/' && pathname === '/') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                <span className={styles.menuIcon}>{item.icon}</span>
+                <span className={styles.menuLabel}>{item.label}</span>
+              </Link>
           </li>
         ))}
       </ul>
