@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Sagara Takumi Portfolio",
     images: [
       {
-        url: "https://sagaratakumi.com/images/ogp.png", // ← 後でここに画像を配置します
+        url: "https://sagaratakumi.com/images/ogp.png",
         width: 1200,
         height: 630,
         alt: "Sagara Takumi Portfolio",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sagara Takumi — Portfolio",
     description: "Sagara Takumi のポートフォリオサイト。",
-    images: ["https://sagaratakumi.com/images/ogp.png"],
+    images: ["https://sagaratakumi.com/images/ogp-square.jpg"],
   },
 };
 
