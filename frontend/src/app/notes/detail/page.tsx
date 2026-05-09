@@ -1,15 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { Note } from '@/types';
 import styles from './page.module.css';
 
-export default function NoteDetailPage() {
-  const params = useParams();
+function NoteDetailContent() {
+  const searchParams = useSearchParams();
   const router = useRouter();
-  const id = params?.id;
+  const id = searchParams?.get('id');
   const [note, setNote] = useState<Note | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -87,5 +87,13 @@ export default function NoteDetailPage() {
         </div>
       </article>
     </div>
+  );
+}
+
+export default function NoteDetailPage() {
+  return (
+    <Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+      <NoteDetailContent />
+    </Suspense>
   );
 }

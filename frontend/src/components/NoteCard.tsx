@@ -9,7 +9,7 @@ interface NoteCardProps {
 
 export default function NoteCard({ note }: NoteCardProps) {
   const isExternal = note.source !== 'internal' && note.url;
-  const href = isExternal ? note.url! : `/notes/${note.id}`;
+  const href = isExternal ? note.url! : `/notes/detail?id=${note.id}`;
 
   const formattedDate = note.published_at
     ? new Date(note.published_at).toLocaleDateString('ja-JP', {

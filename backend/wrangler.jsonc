@@ -3,12 +3,14 @@
   "name": "umi-api",
   "main": "src/index.ts",
   "compatibility_date": "2025-05-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "umi-db",
-      "database_id": "YOUR_DATABASE_ID_HERE"
+      "database_id": "0159d221-f989-4404-bc16-05341d6b8331"
     }
   ]
 }
