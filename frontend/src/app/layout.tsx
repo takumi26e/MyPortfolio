@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Sagara Takumi — Portfolio",
     description: "Sagara Takumi のポートフォリオサイト。",
     images: ["https://sagaratakumi.com/images/ogp-square.jpg"],
