@@ -1,6 +1,7 @@
 'use client';
 
 import type { Note } from '@/types';
+import Link from 'next/link';
 import styles from './NoteCard.module.css';
 
 interface NoteCardProps {
@@ -25,14 +26,8 @@ export default function NoteCard({ note }: NoteCardProps) {
     return `${styles.sourceBadge} ${styles.external}`;
   };
 
-  return (
-    <a
-      href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
-      className={styles.card}
-      id={`note-card-${note.id}`}
-    >
+  const content = (
+    <>
       <div className={styles.thumbnailWrapper}>
         {note.thumbnail_url ? (
           <img
@@ -70,6 +65,26 @@ export default function NoteCard({ note }: NoteCardProps) {
           <p className={styles.description}>{note.description}</p>
         )}
       </div>
-    </a>
+    </>
+  );
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.card}
+        id={`note-card-${note.id}`}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={styles.card} id={`note-card-${note.id}`}>
+      {content}
+    </Link>
   );
 }
