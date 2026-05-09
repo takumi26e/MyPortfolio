@@ -11,7 +11,12 @@ const app = new Hono<{ Bindings: Bindings }>();
 app.use(
   '/api/*',
   cors({
-    origin: ['http://localhost:3000', 'https://umi.pages.dev'],
+    origin: [
+      'http://localhost:3000',
+      'https://umi-portfolio.pages.dev',
+      'https://sagaratakumi.com',
+      'https://www.sagaratakumi.com'
+    ],
     allowMethods: ['GET', 'POST', 'OPTIONS'],
     allowHeaders: ['Content-Type'],
   })
